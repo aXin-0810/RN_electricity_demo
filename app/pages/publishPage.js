@@ -1,0 +1,116 @@
+import React,{Component} from 'react'
+import {
+    View,
+    Text,
+    Image,
+    Button,
+    FlatList,
+    ScrollView,
+    TouchableWithoutFeedback
+} from 'react-native'
+
+export default class PublishPage extends Component{
+
+    render(){
+        return(
+            <View
+                style={{
+                    width:global.width,
+                    height:global.height,
+                    position: 'relative',
+                    flexDirection:'row',
+                    justifyContent:'space-around',
+                    alignItems:'center'
+                }}>
+
+                <Image
+                    source={{uri:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4170131709,453022760&fm=27&gp=0.jpg'}}
+                    style={{
+                        width:global.width,
+                        height:global.height,
+                        opacity:0.1,
+                        position:'absolute',
+                        top:0,
+                        left:0
+                    }}
+                />
+
+                <TouchableWithoutFeedback
+                    onPress={()=>{
+                        this.props.navigate('AllCategories',{val:{tag:1}})
+                    }}>
+                    <View   
+                        style={{
+                            width:global.rem*4,
+                            height:'auto',
+                            alignItems:'center'
+                        }}>
+                        <View
+                            style={{
+                                width:global.rem*2,
+                                height:global.rem*2,
+                                borderRadius:global.rem*1,
+                                backgroundColor:'#ff6633',
+                                justifyContent:'space-around',
+                                alignItems:'center'
+                            }}>
+                            <Image
+                                source={require('../assets/icon/zhuanqian.png')}
+                                style={{
+                                    width:global.rem*1.2,
+                                    height:global.rem*1.2
+                                }}
+                            />
+                        </View>
+                        <Text>我要赚钱</Text>
+                        <Text
+                            style={{
+                                fontSize:global.rem*0.3,
+                                color:'#888'
+                            }}>
+                            接单服务赚钱简单
+                        </Text>
+                    </View>
+                </TouchableWithoutFeedback>
+
+                <TouchableWithoutFeedback
+                    onPress={()=>{
+                        this.props.navigate('AllCategories',{val:{tag:2}})
+                    }}>
+                    <View   
+                        style={{
+                            width:global.rem*4,
+                            height:'auto',
+                            alignItems:'center'
+                        }}>
+                        <View
+                            style={{
+                                width:global.rem*2,
+                                height:global.rem*2,
+                                borderRadius:global.rem*1,
+                                backgroundColor:'#0aa1ed',
+                                justifyContent:'space-around',
+                                alignItems:'center'
+                            }}>
+                            <Image
+                                source={require('../assets/icon/zhaoren.png')}
+                                style={{
+                                    width:global.rem*1.2,
+                                    height:global.rem*1.2
+                                }}
+                            />
+                        </View>
+                        <Text>找人服务</Text>
+                        <Text
+                            style={{
+                                fontSize:global.rem*0.3,
+                                color:'#888'
+                            }}>
+                            发布需求一呼百应
+                        </Text>
+                    </View>
+                </TouchableWithoutFeedback>
+            </View>                
+        )
+    }
+}

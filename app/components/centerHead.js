@@ -1,0 +1,113 @@
+import React,{Component} from 'react'
+import {
+    View,
+    Text,
+    Image,
+    TouchableWithoutFeedback
+} from 'react-native'
+
+export default class CenterHead extends Component{
+    render(){
+        return(
+            <View
+                style={{
+                    width:global.width,
+                    height:global.rem*6,
+                    position: 'relative'
+                }}>
+                <Image
+                    source={{uri:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2384619700,4234708624&fm=27&gp=0.jpg'}}
+                    style={{
+                        width:global.width,
+                        height:global.rem*6
+                    }}
+                />
+                <View
+                    style={{
+                        flexDirection:'row',
+                        position: 'absolute',
+                        bottom:global.rem*1.2,
+                        left:global.rem*0.35
+                    }}>
+                    <TouchableWithoutFeedback
+                        onPress={()=>{
+                            alert('个人信息')
+                        }}>
+                        <View
+                            style={{
+                                width:global.rem*1.8,
+                                height:global.rem*1.8,
+                                marginRight:global.rem*0.5,
+                                position: 'relative'
+                            }}>
+                            <Image
+                                source={{uri:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3084053675,2508203699&fm=27&gp=0.jpg'}}
+                                style={{
+                                    width:global.rem*1.8,
+                                    height:global.rem*1.8,
+                                    borderRadius:global.rem*0.9
+                                }}
+                            />
+                            <View
+                                style={{
+                                    width:global.rem*0.6,
+                                    height:global.rem*0.6,
+                                    justifyContent:'space-around',
+                                    alignItems:'center',
+                                    borderRadius:global.rem*0.3,
+                                    borderWidth:global.rem*0.05,
+                                    borderColor:'#fff',
+                                    backgroundColor:'#ff6633',
+                                    position: 'absolute',
+                                    bottom:0,
+                                    right:0
+                                }}>
+                                <Image
+                                    source={require('../assets/icon/tianxie.png')}
+                                    style={{
+                                        width:global.rem*0.35,
+                                        height:global.rem*0.35
+                                    }}
+                                />
+                            </View>
+                        </View>
+                    </TouchableWithoutFeedback>
+
+                    <View
+                        style={{
+                            paddingTop:global.rem*0.2
+                        }}>
+                        <Text
+                            style={{
+                                fontSize:global.rem*0.5,
+                                color:'#fff'
+                            }}>
+                            123
+                        </Text>
+                        <TouchableWithoutFeedback
+                            onPress={()=>{
+                                alert('个人中心展示')
+                            }}>
+                            <View
+                                style={{
+                                    paddingTop:global.rem*0.05,
+                                    paddingBottom:global.rem*0.05,
+                                    paddingLeft:global.rem*0.3,
+                                    paddingRight:global.rem*0.3,
+                                    borderRadius:global.rem*0.5,
+                                    backgroundColor:'rgba(180,90,60,0.8)'
+                                }}>
+                                <Image/>
+                                <Text
+                                    style={{fontSize:global.rem*0.3}}>
+                                    个人中心
+                                </Text>
+                                <Image/>
+                            </View>
+                        </TouchableWithoutFeedback>
+                    </View>
+                </View>
+            </View>
+        )
+    }
+}
